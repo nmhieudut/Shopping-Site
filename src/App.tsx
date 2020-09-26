@@ -1,13 +1,17 @@
 import React from "react";
 import "./App.css";
-import Counter from "./components/Counter";
-
-
+// import ShoppingCart from "./features/ShoppingCart";
+import Counter from "./features/CountersApp/components/Counter";
+import store from "./store";
+import { Provider } from "react-redux";
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Counter counter={10}/>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        {/* <ShoppingCart/> */}
+        <Counter />
+      </div>
+    </Provider>
   );
 };
 
