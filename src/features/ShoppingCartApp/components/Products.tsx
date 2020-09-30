@@ -2,7 +2,7 @@ import React from "react";
 import { List, Card, Button } from "antd";
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions";
-import { PlusOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 const { Meta } = Card;
 
 export default function ShoppingCartApp() {
@@ -112,7 +112,7 @@ export default function ShoppingCartApp() {
               <Button
                 onClick={() => dispatch(addItem(item))}
                 type="primary"
-                icon={<PlusOutlined />}
+                icon={<ShoppingCartOutlined />}
                 size="large"
               >
                 Add To Cart
