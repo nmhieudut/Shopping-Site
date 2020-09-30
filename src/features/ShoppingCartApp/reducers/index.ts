@@ -6,7 +6,7 @@ import {
 } from "../actions/types";
 
 const initialState: ProductState = {
-  products: [],
+  // products: [],
   addedProducts: [],
 };
 
@@ -16,12 +16,23 @@ export default function (
 ): ProductState {
   switch (action.type) {
     case ADD_ITEM:
-      var newProduct = [...state.addedProducts];
-      newProduct.push(action.product);
+      var found = [...state.addedProducts].find(
+        (item) => item.id === action.product.id
+      );
+      if (found) {
+        found.quantity++;
+        return {
+          ...state,
+          addedProducts: [...state.addedProducts],
+        };
+      }
+      var newAddedProducts = [...state.addedProducts];
+      newAddedProducts.push(action.product);
       return {
         ...state,
-        addedProducts: newProduct,
+        addedProducts: newAddedProducts,
       };
+
     case REMOVE_ITEM:
       var addedProducts = [...state.addedProducts].filter(
         (e) => e.id !== action.id

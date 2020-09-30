@@ -1,12 +1,13 @@
 import {
-  Product,
+  // Product,
+  AddedProduct,
   ADD_ITEM,
   REMOVE_ITEM,
   ShoppingCartActionType,
 } from "./types";
 
 // TypeScript infers that this function is returning SendMessageAction
-export function addItem(product: Product): ShoppingCartActionType {
+export function addItem(product: AddedProduct): ShoppingCartActionType {
   return {
     type: ADD_ITEM,
     product: product,
@@ -14,7 +15,7 @@ export function addItem(product: Product): ShoppingCartActionType {
 }
 
 // TypeScript infers that this function is returning DeleteMessageAction
-export function removeItem(id: string): ShoppingCartActionType {
+export function removeItem(id: number): ShoppingCartActionType {
   return {
     type: REMOVE_ITEM,
     id: id,

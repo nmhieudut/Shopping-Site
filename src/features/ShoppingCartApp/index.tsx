@@ -12,7 +12,7 @@ const ShoppingCartApp: React.FC = () => {
         <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
           <ShoppingCart />
         </Header>
-        <Content style={{ margin: "50px" }}>
+        <Content style={{ margin: "100px" }}>
           <Products />
         </Content>
         <Footer>Footer</Footer>
