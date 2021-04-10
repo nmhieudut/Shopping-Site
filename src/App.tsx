@@ -1,15 +1,16 @@
 import React from "react";
 import "./App.css";
-import ShoppingCartApp from "./features/ShoppingCartApp";
-// import Counter from "./features/CountersApp/components/Counter";
-import store from "./store";
+import Layout from "layout";
+import store from "store";
 import { Provider } from "react-redux";
+require("dotenv").config();
+
+
 const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div className="App">
-        <ShoppingCartApp />
-        {/* <Counter /> */}
+        <Layout />
       </div>
     </Provider>
   );

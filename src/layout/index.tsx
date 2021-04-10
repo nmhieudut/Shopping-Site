@@ -1,6 +1,6 @@
 import React from "react";
-import Products from "./components/Products";
-import ShoppingCart from "./components/ShoppingCart";
+import Products from "features/ShoppingCartApp/components/Products";
+import ShoppingCart from "features/ShoppingCartApp/components/ShoppingCart";
 import { Layout } from "antd";
 
 const { Header, Footer, Content } = Layout;

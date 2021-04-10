@@ -1,9 +1,22 @@
 import React from "react";
-import { Button, Badge, Dropdown, List, Avatar, Typography } from "antd";
-import { ShoppingCartOutlined, DeleteOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Badge,
+  Dropdown,
+  List,
+  Avatar,
+  Typography,
+  Divider
+} from "antd";
+import {
+  ShoppingCartOutlined,
+  DeleteOutlined,
+  PlusOutlined,
+  MinusOutlined
+} from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
-import { removeItem } from "../actions";
+import { removeItem, addOrSubItem } from "../actions";
 const { Title } = Typography;
 interface ShoppingCartProps {}
 
@@ -14,7 +27,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = () => {
   );
   const getTotal = () => {
     let result = addedProducts.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) =>
+        total +
+        Number(item.price.substring(1, item.price.length - 1)) * item.quantity,
       0
     );
     return result;
@@ -27,13 +42,31 @@ const ShoppingCart: React.FC<ShoppingCartProps> = () => {
       <List
         itemLayout="horizontal"
         dataSource={addedProducts}
-        renderItem={(item) => (
+        renderItem={item => (
           <List.Item>
             <List.Item.Meta
               avatar={<Avatar src={item.image} />}
               title={item.name}
-              description={`Costs: ${item.price} $ x ${item.quantity}`}
+              description={`Costs: ${item.price}`}
             />
+            <Button
+              shape="circle"
+              danger
+              icon={<MinusOutlined />}
+              size="small"
+              onClick={() => dispatch(addOrSubItem(item.id, -1))}
+            ></Button>
+            <Divider type="vertical" />
+            {item.quantity}
+            <Divider type="vertical" />
+            <Button
+              shape="circle"
+              danger
+              icon={<PlusOutlined />}
+              size="small"
+              onClick={() => dispatch(addOrSubItem(item.id, 1))}
+            ></Button>
+            <Divider type="vertical" />
             <Button
               type="primary"
               danger
