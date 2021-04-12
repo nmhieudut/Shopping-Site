@@ -1,5 +1,5 @@
 import {
-  Products,
+  Product,
   AddedProducts,
   ADD_ITEM,
   REMOVE_ITEM,
@@ -7,7 +7,7 @@ import {
   FETCH_PRODUCTS,
   SET_PRODUCTS,
   ShoppingCartActionType
-} from "./types";
+} from "types/cart.action";
 
 export function addItem(product: AddedProducts): ShoppingCartActionType {
   return {
@@ -46,7 +46,7 @@ export function addOrSubItem(
 }
 
 export function setProducts(
-  products: Products[],
+  products: Product[],
   isFetching: boolean,
   total: number
 ): ShoppingCartActionType {

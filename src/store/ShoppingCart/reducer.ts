@@ -1,15 +1,15 @@
 import {
-  Products,
+  Product,
   AddedProducts,
   ShoppingCartActionType,
   ADD_ITEM,
   REMOVE_ITEM,
   ADD_SUB_ITEM,
   SET_PRODUCTS
-} from "../actions/types";
+} from "types/cart.action";
 export interface ProductState {
   isFetching: boolean;
-  products: Products[];
+  products: Product[];
   addedProducts: AddedProducts[];
   total: number;
 }

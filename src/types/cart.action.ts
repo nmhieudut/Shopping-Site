@@ -3,11 +3,12 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
 export const SET_PRODUCTS = "SET_PRODUCTS";
 export const ADD_SUB_ITEM = "ADD_SUB_ITEM";
-export interface Products {
+export interface Product {
   id: string;
   name: string;
   image: string;
   price: string;
+  star: number;
   quantity: number;
 }
 export interface AddedProducts {
@@ -15,33 +16,34 @@ export interface AddedProducts {
   name: string;
   image: string;
   price: string;
+  star: number;
   quantity: number;
 }
-interface AddItemAction {
+export interface AddItemAction {
   type: typeof ADD_ITEM;
   product: AddedProducts;
 }
 
-interface RemoveItemAction {
+export interface RemoveItemAction {
   type: typeof REMOVE_ITEM;
   id: string;
 }
 
-interface AddOrSubQuantity {
+export interface AddOrSubQuantity {
   type: typeof ADD_SUB_ITEM;
   id: string;
   quantity: number;
 }
 
-interface FetchProductsAction {
+export interface FetchProductsAction {
   type: typeof FETCH_PRODUCTS;
   page: number;
   count: number;
 }
 
-interface SetProductsAction {
+export interface SetProductsAction {
   type: typeof SET_PRODUCTS;
-  products: Products[];
+  products: Product[];
   isFetching: boolean;
   total: number;
 }

@@ -9,4 +9,4 @@ const getProducts = async (page, count) => {
   }
 };
 
-export default { getProducts };
+export { getProducts };

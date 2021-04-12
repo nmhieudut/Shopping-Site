@@ -1,4 +1,4 @@
-import shoppingCartReducers from "features/ShoppingCartApp/reducers";
+import shoppingCartReducers from "store/ShoppingCart/reducer";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -8,9 +8,6 @@ import rootSagas from "store/rootSagas";
 //Saga (middleware)
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [
-  // Custom Middleware
-  // logger
-
   // SAGA
   sagaMiddleware
 ];

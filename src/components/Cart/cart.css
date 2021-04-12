@@ -1,0 +1,10 @@
+.cart__item {
+  border: 1px solid #ebe8e8;
+  padding: 10px;
+  margin: 5px 0;
+}
+.inline__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}

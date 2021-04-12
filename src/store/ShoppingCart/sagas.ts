@@ -1,10 +1,10 @@
-import { ShoppingCartActionType } from "features/ShoppingCartApp/actions/types";
-import productAPI from "services/products";
-import * as ActionTypes from "../actions/types";
+import { FetchProductsAction } from "types/cart.action";
+import { getProducts } from "services/products";
+import * as ActionTypes from "types/cart.action";
 
 import { put, takeLatest } from "redux-saga/effects";
 
-function* fetchProducts(action: ShoppingCartActionType) {
+function* fetchProducts(action: FetchProductsAction) {
   try {
     yield put({
       type: ActionTypes.SET_PRODUCTS,
@@ -12,8 +12,7 @@ function* fetchProducts(action: ShoppingCartActionType) {
       isFetching: true,
       total: 0
     });
-    const data = yield productAPI.getProducts(action.page, action.count);
-
+    const data = yield getProducts(action.page, action.count);
     if (data.products.length > 0) {
       yield put({
         type: ActionTypes.SET_PRODUCTS,
@@ -22,6 +21,7 @@ function* fetchProducts(action: ShoppingCartActionType) {
           name: product.name,
           image: product.image,
           price: product.price,
+          star: product.star_rating,
           quantity: 1
         })),
         isFetching: false,
