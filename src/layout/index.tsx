@@ -18,7 +18,7 @@ const ShoppingCartApp: React.FC = () => {
         <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
           <ShoppingCart />
         </Header>
-        <Content style={{ margin: "200px" }}>
+        <Content>
           <Redirect from="/" to={"/daily_products"} />
           <Route path={`/daily_products`} component={ProductsPage} />
         </Content>
