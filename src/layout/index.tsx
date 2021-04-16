@@ -1,24 +1,20 @@
 import React from "react";
 import ProductsPage from "pages/ProductPage";
-import ShoppingCart from "pages/modals/ShoppingCartModal/ShoppingCart";
+import { Navigation } from "./Navigation";
 import { Layout } from "antd";
-import {
-  BrowserRouter as Router,
-  Route,
-  // Switch,
-  Redirect
-} from "react-router-dom";
+import "./layout.css";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-const { Header, Footer, Content } = Layout;
+const { Footer, Content } = Layout;
 
 const ShoppingCartApp: React.FC = () => {
   return (
     <Router>
       <Layout>
-        <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
-          <ShoppingCart />
-        </Header>
-        <Content>
+        <div className="header__container">
+          <Navigation />
+        </div>
+        <Content className="content__container">
           <Redirect from="/" to={"/daily_products"} />
           <Route path={`/daily_products`} component={ProductsPage} />
         </Content>

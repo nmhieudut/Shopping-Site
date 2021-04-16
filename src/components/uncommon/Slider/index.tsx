@@ -1,7 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-
+import "./slider.css"
 export interface IChildren {
   id: string | undefined;
   url: string | undefined;
@@ -18,8 +18,8 @@ export const Slider = (props: Props) => {
     <Carousel>
       {children.length > 0 &&
         children.map(child => (
-          <div key={child.id}>
-            <img alt="url" src={child.url} height="100%" />
+          <div key={child.id} className="slider__container">
+            <img alt="url" src={child.url} style={{paddingTop:20}} width="100%"/>
             <p className="legend">{child.legend}</p>
           </div>
         ))}

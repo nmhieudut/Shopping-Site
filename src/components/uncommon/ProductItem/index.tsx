@@ -21,10 +21,9 @@ export const ProductItem = (props: Props) => {
 
   return (
     <div>
-      <List.Item style={{margin:10}}>
+      <List.Item style={{ margin: 10 }}>
         <Card
           hoverable
-          style={{ width: 200 }}
           cover={<img alt="example" src={item.image} />}
         >
           <div className="item__info-wrapper">

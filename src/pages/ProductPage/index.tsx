@@ -10,6 +10,7 @@ import { RootState } from "store";
 import { ProductItem } from "components/uncommon/ProductItem";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "hooks/useQuery";
+import "./productpage.css";
 
 export default function ProductPage() {
   const history = useHistory();
@@ -41,19 +42,19 @@ export default function ProductPage() {
   }, [page, dispatch, history]);
 
   return (
-    <div>
+    <div className="product__page-wrapper">
       <Slider children={vouchers} />
-      <div style={{ margin: "10px 200px" }}>
-        <Title message="For you" />
+      <div style={{ margin: "10px 150px" }}>
+        <Title message="For you" color="orange" />
         {products && products.length > 0 ? (
           <List
+            className="product__item-list"
             loading={isFetching}
             grid={{
               gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 4,
-              lg: 4,
+              sm: 1,
+              md: 2,
+              lg: 3,
               xl: 4,
               xxl: 6
             }}

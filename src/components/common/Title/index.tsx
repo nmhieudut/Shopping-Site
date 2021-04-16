@@ -1,10 +1,15 @@
 import React from "react";
-import "./title.css"
+import "./title.css";
 interface Props {
-  message: string;
+  message?: string;
+  color?: string;
 }
 
 export const Title = (props: Props) => {
-  const { message } = props;
-  return <div className="title__container">{message}</div>;
+  const { message, color } = props;
+  return (
+    <div className="title__container" style={{ color: color }}>
+      {message}
+    </div>
+  );
 };
