@@ -3,15 +3,14 @@ import { Button, Badge, Dropdown } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
-import { Cart } from "components/Cart";
+import { Cart } from "components/uncommon/Cart";
 import { removeItem, addOrSubItem } from "store/ShoppingCart/action";
 interface ShoppingCartProps {}
 
 function ShoppingCartModal(props: ShoppingCartProps) {
   const dispatch = useDispatch();
-  const addedProducts = useSelector(
-    (state: RootState) => state.shoppingCartReducers.addedProducts
-  );
+  const addedProducts = useSelector((state: RootState) => state.shoppingCartReducers.addedProducts);
+  
   const getTotal = () => {
     let result = addedProducts.reduce(
       (total, item) =>

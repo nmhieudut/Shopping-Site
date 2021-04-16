@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, List, Avatar, Typography, Divider } from "antd";
 import { DeleteOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
-import { HorizontalLine } from "components/HorizontalLine";
+import { HorizontalLine } from "components/common/HorizontalLine";
 import { AddedProducts } from "types/cart.action";
 import "./cart.css";
 const { Title } = Typography;

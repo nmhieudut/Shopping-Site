@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
-import { Slider } from "components/Slider";
-import { Loading } from "components/Loading";
-import {Title} from "components/Title"
+import { Slider } from "components/uncommon/Slider";
+import { Loading } from "components/common/Loading";
+import { Title } from "components/common/Title";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, fetchProducts } from "store/ShoppingCart/action";
 import { fetchVouchers } from "store/Vouchers/action";
 import { RootState } from "store";
-import { ProductItem } from "components/ProductItem";
+import { ProductItem } from "components/uncommon/ProductItem";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "hooks/useQuery";
 
@@ -16,18 +16,11 @@ export default function ProductPage() {
   const query = useQuery();
   const dispatch = useDispatch();
   const [page, setPage] = useState(query.get("page") || "1");
-  const products = useSelector(
-    (state: RootState) => state.shoppingCartReducers.products
-  );
-  const isFetching = useSelector(
-    (state: RootState) => state.shoppingCartReducers.isFetching
-  );
-  const total = useSelector(
-    (state: RootState) => state.shoppingCartReducers.total
-  );
-  const vouchers = useSelector(
-    (state: RootState) => state.VouchersReducers.vouchers
-  );
+
+  const products = useSelector((state: RootState) => state.shoppingCartReducers.products);
+  const isFetching = useSelector((state: RootState) => state.shoppingCartReducers.isFetching);
+  const total = useSelector((state: RootState) => state.shoppingCartReducers.total);
+  const vouchers = useSelector((state: RootState) => state.VouchersReducers.vouchers);
 
   const onChangePage = page => {
     setPage(page);
@@ -51,7 +44,7 @@ export default function ProductPage() {
     <div>
       <Slider children={vouchers} />
       <div style={{ margin: "10px 200px" }}>
-        <Title message="For you"/>
+        <Title message="For you" />
         {products && products.length > 0 ? (
           <List
             loading={isFetching}
