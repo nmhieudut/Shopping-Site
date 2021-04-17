@@ -1,5 +1,5 @@
 import { FetchVouchersAction } from "types/voucher.action";
-import { getVouchers } from "services/vouchers";
+import { getAll } from "services/vouchers";
 import * as ActionTypes from "types/voucher.action";
 
 import { put, takeLatest } from "redux-saga/effects";
@@ -10,7 +10,7 @@ function* fetchVouchers(action: FetchVouchersAction) {
       type: ActionTypes.SET_VOUCHERS,
       vouchers: []
     });
-    const data = yield getVouchers();
+    const data = yield getAll();
 
     if (data.vouchers.length > 0) {
       yield put({

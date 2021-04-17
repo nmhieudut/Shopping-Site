@@ -8,10 +8,10 @@ interface Props {}
 
 export const Navigation = (props: Props) => {
   return (
-    <>
-      <div className="nav_user-container">
-        <div className="nav_user-item">Notifications</div>
-        <div className="nav_user-item">
+    <div className="nav__user-wrapper">
+      <div className="nav__user-container">
+        <div className="nav__user-item">Notifications</div>
+        <div className="nav__user-item">
           <Avatar
             style={{ border: "1px solid white", margin: "0 10px" }}
             size={24}
@@ -20,15 +20,15 @@ export const Navigation = (props: Props) => {
           Hieu Nguyen
         </div>
       </div>
-      <div className="nav_body-container">
-        <div className="nav_body-item">Logo</div>
-        <div className="nav_body-item">
+      <div className="nav__body-container">
+        <div className="nav__body-item">Logo</div>
+        <div className="nav__body-item">
           <SearchInput />
         </div>
-        <div className="nav_body-item">
+        <div className="nav__body-item">
           <ShoppingCartModal />
         </div>
       </div>
-    </>
+    </div>
   );
 };

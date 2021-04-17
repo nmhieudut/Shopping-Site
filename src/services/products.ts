@@ -1,6 +1,6 @@
-import productClient from "axios/products";
+import productClient from "api/products";
 
-const getProducts = async (page, count) => {
+const getLists = async (page, count) => {
   try {
     const res = await productClient.get(`?page=${page}&count=${count}`);
     return res.data;
@@ -9,4 +9,4 @@ const getProducts = async (page, count) => {
   }
 };
 
-export { getProducts };
+export { getLists };

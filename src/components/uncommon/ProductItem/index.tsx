@@ -21,23 +21,18 @@ export const ProductItem = (props: Props) => {
 
   return (
     <div>
-      <List.Item style={{ margin: 10 }}>
-        <Card
-          hoverable
-          cover={<img alt="example" src={item.image} />}
-        >
+      <List.Item style={{ margin: "10px 0" }}>
+        <Card hoverable cover={<img alt="example" src={item.image} />}>
           <div className="item__info-wrapper">
             <p className="name__detail">{item.name}</p>
             <p className="price__detail">{item.price}</p>
           </div>
 
           <div className="rating__wrapper">
-            <Rate
-              className="rating__container"
-              disabled
-              allowHalf
-              defaultValue={item.star}
-            />
+            <div className="rating__container">
+              <Rate className="rating__amount" disabled allowHalf defaultValue={item.star} />
+            </div>
+
             <Button
               onClick={() => onChooseItem(item)}
               type="primary"

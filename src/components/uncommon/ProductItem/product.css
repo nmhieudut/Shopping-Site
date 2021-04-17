@@ -1,23 +1,28 @@
 .rating__wrapper {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .rating__container {
-     font-size: 10px;
+  display: flex;
+}
+
+.rating__amount {
+  font-size: 12px;
 }
 
 .item__info-wrapper {
-     display:flex;
-     flex-direction: column;
-     align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .name__detail {
-     color: rgb(113, 125, 148)
+  color: rgb(113, 125, 148);
 }
 
 .price__detail {
-     color: rgb(71, 115, 197);
-     font-weight: 700;
+  color: rgb(71, 115, 197);
+  font-weight: 700;
 }

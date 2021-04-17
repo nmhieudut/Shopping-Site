@@ -1,8 +1,12 @@
 .product__page-wrapper {
-     width:100%
+  width: 100%;
 }
 
 .product__item-list {
-     display: flex;
-     justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.slider__wrapper {
+  margin-top: 121px;
 }

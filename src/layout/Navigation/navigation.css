@@ -1,19 +1,27 @@
-.nav_user-container {
+.nav__user-wrapper {
+  max-width: 1492px;
+  padding:0 110px;
+  margin: 0 auto;
+}
+
+.nav__user-container {
+  width:100%;
   padding: 10px 0;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 }
 
-.nav_user-item {
+.nav__user-item {
   color: white;
   margin: 5px 0 10px 50px;
   display: flex;
   align-items: center;
 }
 
-.nav_body-container {
+.nav__body-container {
   padding: 10px 0 20px 0;
   display: flex;
+  width:100%;
   justify-content: space-between;
 }

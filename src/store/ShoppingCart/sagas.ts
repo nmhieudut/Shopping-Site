@@ -1,5 +1,5 @@
 import { FetchProductsAction } from "types/cart.action";
-import { getProducts } from "services/products";
+import { getLists } from "services/products";
 import * as ActionTypes from "types/cart.action";
 
 import { put, takeLatest } from "redux-saga/effects";
@@ -12,7 +12,7 @@ function* fetchProducts(action: FetchProductsAction) {
       isFetching: true,
       total: 0
     });
-    const data = yield getProducts(action.page, action.count);
+    const data = yield getLists(action.page, action.count);
     if (data.products.length > 0) {
       yield put({
         type: ActionTypes.SET_PRODUCTS,

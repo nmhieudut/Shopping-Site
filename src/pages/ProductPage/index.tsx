@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
 import { Slider } from "components/uncommon/Slider";
-import { Loading } from "components/common/Loading";
+import { Spinner } from "components/common/Spinner";
 import { Title } from "components/common/Title";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, fetchProducts } from "store/ShoppingCart/action";
@@ -18,10 +18,18 @@ export default function ProductPage() {
   const dispatch = useDispatch();
   const [page, setPage] = useState(query.get("page") || "1");
 
-  const products = useSelector((state: RootState) => state.shoppingCartReducers.products);
-  const isFetching = useSelector((state: RootState) => state.shoppingCartReducers.isFetching);
-  const total = useSelector((state: RootState) => state.shoppingCartReducers.total);
-  const vouchers = useSelector((state: RootState) => state.VouchersReducers.vouchers);
+  const products = useSelector(
+    (state: RootState) => state.shoppingCartReducers.products
+  );
+  const isFetching = useSelector(
+    (state: RootState) => state.shoppingCartReducers.isFetching
+  );
+  const total = useSelector(
+    (state: RootState) => state.shoppingCartReducers.total
+  );
+  const vouchers = useSelector(
+    (state: RootState) => state.VouchersReducers.vouchers
+  );
 
   const onChangePage = page => {
     setPage(page);
@@ -43,8 +51,11 @@ export default function ProductPage() {
 
   return (
     <div className="product__page-wrapper">
-      <Slider children={vouchers} />
-      <div style={{ margin: "10px 150px" }}>
+      <div className="slider__wrapper">
+        <Slider children={vouchers} />
+      </div>
+
+      <div style={{ margin: "10px 110px" }}>
         <Title message="For you" color="orange" />
         {products && products.length > 0 ? (
           <List
@@ -56,7 +67,7 @@ export default function ProductPage() {
               md: 2,
               lg: 3,
               xl: 4,
-              xxl: 6
+              xxl: 4,
             }}
             dataSource={products}
             renderItem={item => (
@@ -64,7 +75,7 @@ export default function ProductPage() {
             )}
           />
         ) : (
-          <Loading />
+          <Spinner />
         )}
         {total > 0 && (
           <div style={{ margin: 20 }}>

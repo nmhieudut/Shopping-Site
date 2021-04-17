@@ -1,6 +1,6 @@
-import voucherClient from "axios/vouchers";
+import voucherClient from "api/vouchers";
 
-const getVouchers = async () => {
+const getAll = async () => {
   try {
     const res = await voucherClient.get("");
     return res.data;
@@ -9,4 +9,4 @@ const getVouchers = async () => {
   }
 };
 
-export { getVouchers };
+export { getAll };

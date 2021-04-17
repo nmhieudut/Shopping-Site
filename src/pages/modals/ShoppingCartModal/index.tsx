@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
 import { Cart } from "components/uncommon/Cart";
 import { removeItem, addOrSubItem } from "store/ShoppingCart/action";
+
 interface ShoppingCartProps {}
 
 function ShoppingCartModal(props: ShoppingCartProps) {
