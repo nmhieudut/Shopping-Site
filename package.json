@@ -16,6 +16,7 @@
     "antd": "^4.6.5",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "node-sass": "^5.0.0",
     "query-string": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

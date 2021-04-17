@@ -3,7 +3,7 @@ import { Button, Badge, Dropdown } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
-import { Cart } from "components/uncommon/Cart";
+import { Cart } from "components/uncommon";
 import { removeItem, addOrSubItem } from "store/ShoppingCart/action";
 
 interface ShoppingCartProps {}

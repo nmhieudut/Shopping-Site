@@ -1,6 +1,6 @@
 import React from "react";
 import ShoppingCartModal from "pages/modals/ShoppingCartModal";
-import { SearchInput } from "components/common/SearchInput";
+import { SearchInput } from "components/common";
 import { Avatar } from "antd";
 import "./navigation.css";
 

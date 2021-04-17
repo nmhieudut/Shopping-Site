@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
-import { Slider } from "components/uncommon/Slider";
-import { Spinner } from "components/common/Spinner";
-import { Title } from "components/common/Title";
+import { Slider } from "components/uncommon";
+import { Spinner } from "components/common";
+import { Title } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, fetchProducts } from "store/ShoppingCart/action";
 import { fetchVouchers } from "store/Vouchers/action";
 import { RootState } from "store";
-import { ProductItem } from "components/uncommon/ProductItem";
+import { ProductItem } from "components/uncommon";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "hooks/useQuery";
 import "./productpage.css";
