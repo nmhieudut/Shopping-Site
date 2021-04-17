@@ -1,10 +1,8 @@
-import { FetchProductsAction } from "types/cart.action";
-import { getLists } from "services/products";
-import * as ActionTypes from "types/cart.action";
-
+import { getLists } from "services";
+import * as ActionTypes from "types";
 import { put, takeLatest } from "redux-saga/effects";
 
-function* fetchProducts(action: FetchProductsAction) {
+function* fetchProducts(action: ActionTypes.FetchProductsAction) {
   try {
     yield put({
       type: ActionTypes.SET_PRODUCTS,

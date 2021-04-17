@@ -1,10 +1,8 @@
-import { FetchVouchersAction } from "types/voucher.action";
-import { getAll } from "services/vouchers";
-import * as ActionTypes from "types/voucher.action";
-
+import { getAll } from "services";
+import * as ActionTypes from "types";
 import { put, takeLatest } from "redux-saga/effects";
 
-function* fetchVouchers(action: FetchVouchersAction) {
+function* fetchVouchers(action: ActionTypes.FetchVouchersAction) {
   try {
     yield put({
       type: ActionTypes.SET_VOUCHERS,
