@@ -1,5 +1,5 @@
 import React from "react";
-import "./line.css";
+import "styles/css/components/common/line.css";
 interface Props {
   color: string;
 }

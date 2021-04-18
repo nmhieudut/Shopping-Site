@@ -1,7 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import "./slider.css";
+import "styles/css/components/uncommon/slider.css";
 export interface IChildren {
   id: string | undefined;
   url: string | undefined;

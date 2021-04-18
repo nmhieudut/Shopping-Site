@@ -2,7 +2,7 @@ import React from "react";
 import ShoppingCartModal from "pages/modals/ShoppingCartModal";
 import { SearchInput } from "components/common";
 import { Avatar } from "antd";
-import "./navigation.css";
+import "styles/css/layout/navigation.css";
 
 interface Props {}
 

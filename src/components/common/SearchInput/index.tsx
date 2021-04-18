@@ -1,5 +1,5 @@
 import React from "react";
-import "./searchinput.css";
+import "styles/css/components/common/searchinput.css";
 interface Props {}
 
 export const SearchInput = (props: Props) => {

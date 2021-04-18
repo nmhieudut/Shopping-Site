@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
 import { Slider } from "components/uncommon";
-import { Spinner } from "components/common";
-import { Title } from "components/common";
+import { Title,Spinner } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, fetchProducts } from "store/ShoppingCart/action";
 import { fetchVouchers } from "store/Vouchers/action";
@@ -10,7 +9,7 @@ import { RootState } from "store";
 import { ProductItem } from "components/uncommon";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "hooks/useQuery";
-import "./productpage.css";
+import "styles/css/pages/productpage.css";
 
 export default function ProductPage() {
   const history = useHistory();

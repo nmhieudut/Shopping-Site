@@ -4,7 +4,7 @@ import { Button, List, Avatar, Typography, Divider } from "antd";
 import { DeleteOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import { HorizontalLine } from "components/common";
 import { AddedProducts } from "types";
-import "./cart.css";
+import "styles/css/components/uncommon/cart.css";
 const { Title } = Typography;
 
 interface Props {

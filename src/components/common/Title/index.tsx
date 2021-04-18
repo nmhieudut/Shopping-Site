@@ -1,5 +1,5 @@
 import React from "react";
-import "./title.css";
+import "styles/css/components/common/title.css";
 interface Props {
   message?: string;
   color?: string;

@@ -2,7 +2,7 @@ import React from "react";
 import { List, Card, Button, Rate } from "antd";
 import { Product } from "types";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import "./product.css";
+import "styles/css/components/uncommon/product.css";
 
 interface Props {
   item: Product;

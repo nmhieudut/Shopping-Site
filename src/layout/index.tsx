@@ -3,7 +3,7 @@ import ProductsPage from "pages/ProductPage";
 import { Navigation } from "./Navigation";
 import {Footer} from "./Footer"
 import { Layout } from "antd";
-import "./layout.css";
+import "styles/css/layout/layout.css";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 const { Content } = Layout;
