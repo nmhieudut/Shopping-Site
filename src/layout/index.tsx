@@ -1,7 +1,7 @@
 import React from "react";
 import ProductsPage from "pages/ProductPage";
 import { Navigation } from "./Navigation";
-import {Footer} from "./Footer"
+import { Footer } from "./Footer";
 import { Layout } from "antd";
 import "styles/css/layout/layout.css";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
@@ -19,7 +19,7 @@ const ShoppingCartApp: React.FC = () => {
           <Redirect from="/" to={"/daily_products"} />
           <Route path={`/daily_products`} component={ProductsPage} />
         </Content>
-        <Footer/>
+        <Footer />
       </Layout>
     </Router>
   );

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
-import { Slider } from "components/uncommon";
+import { Slider,ProductItem } from "components/uncommon";
 import { Title,Spinner } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, fetchProducts } from "store/ShoppingCart/action";
-import { fetchVouchers } from "store/Vouchers/action";
+import { addItem, fetchProducts } from "store/ShoppingCart";
+import { fetchVouchers } from "store/Vouchers";
 import { RootState } from "store";
-import { ProductItem } from "components/uncommon";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "hooks/useQuery";
 import "styles/css/pages/productpage.css";

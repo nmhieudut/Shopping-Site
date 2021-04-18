@@ -4,7 +4,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
 import { Cart } from "components/uncommon";
-import { removeItem, addOrSubItem } from "store/ShoppingCart/action";
+import { removeItem, addOrSubItem } from "store/ShoppingCart";
 
 interface ShoppingCartProps {}
 
