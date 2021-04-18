@@ -6,7 +6,7 @@ import {
   REMOVE_ITEM,
   ADD_SUB_ITEM,
   SET_PRODUCTS
-} from "types/cart.action";
+} from "types";
 export interface ProductState {
   isFetching: boolean;
   products: Product[];

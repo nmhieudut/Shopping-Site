@@ -7,7 +7,7 @@ import {
   FETCH_PRODUCTS,
   SET_PRODUCTS,
   ShoppingCartActionType
-} from "types/cart.action";
+} from "types";
 
 export function addItem(product: AddedProducts): ShoppingCartActionType {
   return {

@@ -1,4 +1,4 @@
-import { Voucher, SET_VOUCHERS, VoucherActionType } from "types/voucher.action";
+import { Voucher, SET_VOUCHERS, VoucherActionType } from "types";
 export interface VoucherState {
   vouchers: Voucher[];
 }
