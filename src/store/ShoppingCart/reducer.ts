@@ -2,7 +2,7 @@ import {
   ShoppingCartActionType,
   ADD_ITEM,
   REMOVE_ITEM,
-  ADD_SUB_ITEM,
+  ADJUST_ITEM,
   SET_PRODUCTS
 } from "@types";
 
@@ -66,7 +66,7 @@ export default function shoppingCartReducers(
         ...state,
         addedProducts: addedProducts
       };
-    case ADD_SUB_ITEM:
+    case ADJUST_ITEM:
       for (let i = 0; i < state.addedProducts.length; i++) {
         if (state.addedProducts[i].id === action.id) {
           state.addedProducts[i].quantity =

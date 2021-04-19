@@ -4,7 +4,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
 import { Cart } from "components/uncommon";
-import { removeItem, addOrSubItem } from "store/ShoppingCart";
+import { removeItem, adjustItem } from "store/ShoppingCart";
 
 interface ShoppingCartProps {}
 
@@ -26,8 +26,8 @@ function ShoppingCartModal(props: ShoppingCartProps) {
     dispatch(removeItem(id));
   };
 
-  const handleAddOrSubItem = (id, quantity) => {
-    dispatch(addOrSubItem(id, quantity));
+  const handleAdjustItem = (id, quantity) => {
+    dispatch(adjustItem(id, quantity));
   };
 
   return (
@@ -37,7 +37,7 @@ function ShoppingCartModal(props: ShoppingCartProps) {
           <Cart
             addedProducts={addedProducts}
             removeItem={handleRemoveItem}
-            addOrSubItem={handleAddOrSubItem}
+            adjustItem={handleAdjustItem}
             getTotal={getTotal}
           />
         }

@@ -1,6 +1,6 @@
 import React from "react";
 import { List, Card, Button, Rate } from "antd";
-import { Product } from "@types";
+import { Product } from "store/ShoppingCart/reducer";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import "styles/css/components/uncommon/product.css";
 
@@ -10,7 +10,7 @@ interface Props {
   onChoose?: (item: Product) => void | undefined;
 }
 
-export const ProductItem = (props: Props) => {
+export const CardItem = (props: Props) => {
   const { item, onChoose, message } = props;
 
   const onChooseItem = item => {

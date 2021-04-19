@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { Button, List, Avatar, Typography, Divider } from "antd";
 import { DeleteOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import { HorizontalLine } from "components/common";
-import { AddedProducts } from "@types";
+import { AddedProducts } from "store/ShoppingCart/reducer";
 import "styles/css/components/uncommon/cart.css";
 const { Title } = Typography;
 
 interface Props {
   addedProducts: AddedProducts[];
   removeItem: (id: string) => void;
-  addOrSubItem: (id: string, quantity: number) => void;
+  adjustItem: (id: string, quantity: number) => void;
   getTotal: () => Number;
 }
 
 export const Cart = (props: Props) => {
-  const { addedProducts, removeItem, addOrSubItem, getTotal } = props;
+  const { addedProducts, removeItem, adjustItem, getTotal } = props;
   return (
     <div
       style={{ minWidth: "500px", backgroundColor: "white", padding: "10px" }}
@@ -40,7 +40,7 @@ export const Cart = (props: Props) => {
               danger
               icon={<MinusOutlined />}
               size="small"
-              onClick={() => addOrSubItem(item.id, -1)}
+              onClick={() => adjustItem(item.id, -1)}
             ></Button>
             <Divider type="vertical" />
             {item.quantity}
@@ -50,7 +50,7 @@ export const Cart = (props: Props) => {
               type="primary"
               icon={<PlusOutlined />}
               size="small"
-              onClick={() => addOrSubItem(item.id, 1)}
+              onClick={() => adjustItem(item.id, 1)}
             ></Button>
             <Divider type="vertical" />
             <Button

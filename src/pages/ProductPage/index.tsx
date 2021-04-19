@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
-import { Slider, ProductItem } from "components/uncommon";
+import { Slider, CardItem } from "components/uncommon";
 import { Title, Spinner } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, fetchProducts } from "store/ShoppingCart";
@@ -50,7 +50,11 @@ export default function ProductPage() {
   return (
     <div className="product__page-wrapper">
       <div className="slider__wrapper">
-        <Slider children={vouchers} />
+        {vouchers && vouchers.length > 0 ? (
+          <Slider children={vouchers} />
+        ) : (
+          <Spinner />
+        )}
       </div>
 
       <div style={{ margin: "10px 110px" }}>
@@ -61,16 +65,16 @@ export default function ProductPage() {
               className="product__item-list"
               loading={isFetching}
               grid={{
-                gutter: 16,
+                gutter: 12,
                 sm: 1,
                 md: 2,
-                lg: 3,
-                xl: 4,
-                xxl: 4
+                lg: 4,
+                xl: 6,
+                xxl: 6
               }}
               dataSource={products}
               renderItem={item => (
-                <ProductItem item={item} onChoose={onAddToCart} message="Add" />
+                <CardItem item={item} onChoose={onAddToCart} message="Add" />
               )}
             />
           </>

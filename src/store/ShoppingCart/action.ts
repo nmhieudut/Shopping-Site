@@ -1,7 +1,7 @@
 import {
   ADD_ITEM,
   REMOVE_ITEM,
-  ADD_SUB_ITEM,
+  ADJUST_ITEM,
   FETCH_PRODUCTS,
   SET_PRODUCTS,
   ShoppingCartActionType
@@ -33,12 +33,12 @@ export function fetchProducts(
   };
 }
 
-export function addOrSubItem(
+export function adjustItem(
   id: string,
   quantity: number
 ): ShoppingCartActionType {
   return {
-    type: ADD_SUB_ITEM,
+    type: ADJUST_ITEM,
     id,
     quantity
   };

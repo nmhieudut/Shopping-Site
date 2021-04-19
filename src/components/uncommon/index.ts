@@ -1,3 +1,3 @@
-export * from "./Cart"
-export * from "./ProductItem"
-export * from "./Slider"
+export * from "./Cart";
+export * from "./CardItem";
+export * from "./Slider";

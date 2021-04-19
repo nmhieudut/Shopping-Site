@@ -5,7 +5,7 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
 export const SET_PRODUCTS = "SET_PRODUCTS";
-export const ADD_SUB_ITEM = "ADD_SUB_ITEM";
+export const ADJUST_ITEM = "ADJUST_ITEM";
 
 export interface AddItemAction {
   type: typeof ADD_ITEM;
@@ -17,8 +17,8 @@ export interface RemoveItemAction {
   id: string;
 }
 
-export interface AddOrSubQuantity {
-  type: typeof ADD_SUB_ITEM;
+export interface AdjustItemAction {
+  type: typeof ADJUST_ITEM;
   id: string;
   quantity: number;
 }
@@ -40,5 +40,5 @@ export type ShoppingCartActionType =
   | AddItemAction
   | RemoveItemAction
   | FetchProductsAction
-  | AddOrSubQuantity
+  | AdjustItemAction
   | SetProductsAction;
