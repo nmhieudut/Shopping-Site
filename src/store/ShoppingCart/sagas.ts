@@ -10,7 +10,7 @@ function* fetchProducts(action: ActionTypes.FetchProductsAction) {
       isFetching: true,
       total: 0
     });
-    const data = yield getLists(action.page, action.count);
+    const data = yield getLists(action.page, action.count, action.q);
     if (data.products.length > 0) {
       yield put({
         type: ActionTypes.SET_PRODUCTS,
@@ -23,14 +23,16 @@ function* fetchProducts(action: ActionTypes.FetchProductsAction) {
           quantity: 1
         })),
         isFetching: false,
-        total: data.total
+        total: data.total,
+        hasSearched: data.hasSearched
       });
     } else {
       yield put({
         type: ActionTypes.SET_PRODUCTS,
         products: [],
         isFetching: false,
-        total: 0
+        total: 0,
+        hasSearched: data.hasSearched
       });
     }
   } catch (err) {

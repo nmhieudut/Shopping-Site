@@ -1,0 +1,14 @@
+.search__input-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.search__input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.search__button-container {
+  padding: 5px 20px;
+}

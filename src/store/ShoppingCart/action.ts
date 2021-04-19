@@ -24,12 +24,14 @@ export function removeItem(id: string): ShoppingCartActionType {
 
 export function fetchProducts(
   page: number,
-  count: number
+  count: number,
+  q: string
 ): ShoppingCartActionType {
   return {
     type: FETCH_PRODUCTS,
     page,
-    count
+    count,
+    q
   };
 }
 
@@ -47,12 +49,14 @@ export function adjustItem(
 export function setProducts(
   products: Product[],
   isFetching: boolean,
-  total: number
+  total: number,
+  hasSearched: boolean
 ): ShoppingCartActionType {
   return {
     type: SET_PRODUCTS,
     products,
     isFetching,
-    total
+    total,
+    hasSearched
   };
 }

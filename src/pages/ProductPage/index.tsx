@@ -28,7 +28,10 @@ export default function ProductPage() {
   const vouchers = useSelector(
     (state: RootState) => state.VouchersReducers.vouchers
   );
-
+  const hasSearched = useSelector(
+    (state: RootState) => state.shoppingCartReducers.hasSearched
+  );
+  console.log("-------",hasSearched);
   const onChangePage = page => {
     setPage(page);
     history.push(`/daily_products?page=${page}`);
@@ -43,7 +46,7 @@ export default function ProductPage() {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchProducts(parseInt(page), 12));
+    dispatch(fetchProducts(parseInt(page), 12, ""));
     history.push(`/daily_products?page=${page}`);
   }, [page, dispatch, history]);
 
@@ -60,7 +63,15 @@ export default function ProductPage() {
       <div style={{ margin: "10px 110px" }}>
         {products && products.length > 0 ? (
           <>
-            <Title message="For you" color="orange" />
+            {hasSearched ? (
+              <Title
+                message={`${products.length} results for ${query}`}
+                color="orange"
+              />
+            ) : (
+              <Title message="For you" color="orange" />
+            )}
+
             <List
               className="product__item-list"
               loading={isFetching}
@@ -69,7 +80,7 @@ export default function ProductPage() {
                 sm: 1,
                 md: 2,
                 lg: 4,
-                xl: 6,
+                xl: 4,
                 xxl: 6
               }}
               dataSource={products}

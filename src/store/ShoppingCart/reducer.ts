@@ -24,12 +24,14 @@ export interface AddedProducts {
 }
 export interface ProductState {
   isFetching: boolean;
+  hasSearched: boolean;
   products: Product[];
   addedProducts: AddedProducts[];
   total: number;
 }
 const initialState: ProductState = {
   isFetching: false,
+  hasSearched: false,
   products: [],
   addedProducts: [],
   total: 0
@@ -92,7 +94,8 @@ export default function shoppingCartReducers(
         ...state,
         products: action.products,
         isFetching: action.isFetching,
-        total: action.total
+        total: action.total,
+        hasSearched: action.hasSearched
       };
     default:
       return state;

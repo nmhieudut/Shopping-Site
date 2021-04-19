@@ -27,6 +27,7 @@ export interface FetchProductsAction {
   type: typeof FETCH_PRODUCTS;
   page: number;
   count: number;
+  q: string;
 }
 
 export interface SetProductsAction {
@@ -34,6 +35,7 @@ export interface SetProductsAction {
   products: Product[];
   isFetching: boolean;
   total: number;
+  hasSearched: boolean;
 }
 
 export type ShoppingCartActionType =
