@@ -1,6 +1,6 @@
 import React from "react";
 import { List, Card, Button, Rate } from "antd";
-import { Product } from "types";
+import { Product } from "@types";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import "styles/css/components/uncommon/product.css";
 

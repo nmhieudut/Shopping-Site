@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { List, Pagination } from "antd";
-import { Slider,ProductItem } from "components/uncommon";
-import { Title,Spinner } from "components/common";
+import { Slider, ProductItem } from "components/uncommon";
+import { Title, Spinner } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, fetchProducts } from "store/ShoppingCart";
 import { fetchVouchers } from "store/Vouchers";
@@ -54,24 +54,26 @@ export default function ProductPage() {
       </div>
 
       <div style={{ margin: "10px 110px" }}>
-        <Title message="For you" color="orange" />
         {products && products.length > 0 ? (
-          <List
-            className="product__item-list"
-            loading={isFetching}
-            grid={{
-              gutter: 16,
-              sm: 1,
-              md: 2,
-              lg: 3,
-              xl: 4,
-              xxl: 4,
-            }}
-            dataSource={products}
-            renderItem={item => (
-              <ProductItem item={item} onChoose={onAddToCart} message="Add" />
-            )}
-          />
+          <>
+            <Title message="For you" color="orange" />
+            <List
+              className="product__item-list"
+              loading={isFetching}
+              grid={{
+                gutter: 16,
+                sm: 1,
+                md: 2,
+                lg: 3,
+                xl: 4,
+                xxl: 4
+              }}
+              dataSource={products}
+              renderItem={item => (
+                <ProductItem item={item} onChoose={onAddToCart} message="Add" />
+              )}
+            />
+          </>
         ) : (
           <Spinner />
         )}

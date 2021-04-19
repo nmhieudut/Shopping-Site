@@ -1,13 +1,12 @@
 import {
-  Product,
-  AddedProducts,
   ADD_ITEM,
   REMOVE_ITEM,
   ADD_SUB_ITEM,
   FETCH_PRODUCTS,
   SET_PRODUCTS,
   ShoppingCartActionType
-} from "types";
+} from "@types";
+import { Product, AddedProducts } from "store/ShoppingCart/reducer";
 
 export function addItem(product: AddedProducts): ShoppingCartActionType {
   return {

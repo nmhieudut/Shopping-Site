@@ -3,7 +3,7 @@ import {
   FETCH_VOUCHERS,
   SET_VOUCHERS,
   VoucherActionType
-} from "types";
+} from "@types";
 
 export function fetchVouchers(): VoucherActionType {
   return {

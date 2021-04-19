@@ -1,4 +1,11 @@
-import { Voucher, SET_VOUCHERS, VoucherActionType } from "types";
+import { SET_VOUCHERS, VoucherActionType } from "@types";
+
+export interface Voucher {
+  id: string;
+  url: string;
+  legend: string;
+}
+
 export interface VoucherState {
   vouchers: Voucher[];
 }

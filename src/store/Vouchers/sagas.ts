@@ -1,5 +1,5 @@
 import { getAll } from "services";
-import * as ActionTypes from "types";
+import * as ActionTypes from "@types";
 import { put, takeLatest } from "redux-saga/effects";
 
 function* fetchVouchers(action: ActionTypes.FetchVouchersAction) {

@@ -1,12 +1,27 @@
 import {
-  Product,
-  AddedProducts,
   ShoppingCartActionType,
   ADD_ITEM,
   REMOVE_ITEM,
   ADD_SUB_ITEM,
   SET_PRODUCTS
-} from "types";
+} from "@types";
+
+export interface Product {
+  id: string;
+  name: string;
+  image: string;
+  price: string;
+  star: number;
+  quantity: number;
+}
+export interface AddedProducts {
+  id: string;
+  name: string;
+  image: string;
+  price: string;
+  star: number;
+  quantity: number;
+}
 export interface ProductState {
   isFetching: boolean;
   products: Product[];

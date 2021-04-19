@@ -1,24 +1,12 @@
+import { Product, AddedProducts } from "store/ShoppingCart";
+
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
+
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
 export const SET_PRODUCTS = "SET_PRODUCTS";
 export const ADD_SUB_ITEM = "ADD_SUB_ITEM";
-export interface Product {
-  id: string;
-  name: string;
-  image: string;
-  price: string;
-  star: number;
-  quantity: number;
-}
-export interface AddedProducts {
-  id: string;
-  name: string;
-  image: string;
-  price: string;
-  star: number;
-  quantity: number;
-}
+
 export interface AddItemAction {
   type: typeof ADD_ITEM;
   product: AddedProducts;
