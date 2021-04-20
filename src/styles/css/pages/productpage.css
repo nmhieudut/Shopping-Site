@@ -10,3 +10,8 @@
 .slider__wrapper {
   margin-top: 121px;
 }
+
+.product__notfound-list {
+  display: flex;
+  justify-content: center;
+}

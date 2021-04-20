@@ -2,10 +2,11 @@ import React from "react";
 import ShoppingCartModal from "shared/modals/ShoppingCartModal";
 import { SearchInput } from "components/common";
 import { Avatar } from "antd";
-import { fetchProducts } from "store/ShoppingCart";
+import { fetchProducts } from "store/Products";
 import { useDispatch } from "react-redux";
 import "styles/css/layout/navigation.css";
-
+import logo from "assets/logo.png"
+import { Link } from "react-router-dom";
 interface Props {}
 
 export const Navigation = (props: Props) => {
@@ -28,7 +29,9 @@ export const Navigation = (props: Props) => {
         </div>
       </div>
       <div className="nav__body-container">
-        <div className="nav__body-item">Logo</div>
+        <Link to="/daily_products" target="_top" className="nav__body-item nav__logo-container">
+          <img src={logo} alt="" width="60px" height="60px"/>
+        </Link>
         <div className="nav__body-item nav__search-container">
           <SearchInput onSearch={onSearch} />
         </div>

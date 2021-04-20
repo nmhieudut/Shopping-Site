@@ -22,7 +22,7 @@ export const SearchInput = (props: Props) => {
 
   const handleSearch = () => {
     if (onSearch) {
-      onSearch(query);
+      query.trim() !== "" && onSearch(query)
     }
     return;
   }

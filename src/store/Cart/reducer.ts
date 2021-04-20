@@ -2,18 +2,9 @@ import {
   ShoppingCartActionType,
   ADD_ITEM,
   REMOVE_ITEM,
-  ADJUST_ITEM,
-  SET_PRODUCTS
+  ADJUST_ITEM
 } from "@types";
 
-export interface Product {
-  id: string;
-  name: string;
-  image: string;
-  price: string;
-  star: number;
-  quantity: number;
-}
 export interface AddedProducts {
   id: string;
   name: string;
@@ -22,25 +13,17 @@ export interface AddedProducts {
   star: number;
   quantity: number;
 }
-export interface ProductState {
-  isFetching: boolean;
-  hasSearched: boolean;
-  products: Product[];
+export interface CartState {
   addedProducts: AddedProducts[];
-  total: number;
 }
-const initialState: ProductState = {
-  isFetching: false,
-  hasSearched: false,
-  products: [],
-  addedProducts: [],
-  total: 0
+const initialState: CartState = {
+  addedProducts: []
 };
 
 export default function shoppingCartReducers(
   state = initialState,
   action: ShoppingCartActionType
-): ProductState {
+): CartState {
   switch (action.type) {
     case ADD_ITEM:
       let found = [...state.addedProducts].find(
@@ -88,14 +71,6 @@ export default function shoppingCartReducers(
       return {
         ...state,
         addedProducts: newProductsList
-      };
-    case SET_PRODUCTS:
-      return {
-        ...state,
-        products: action.products,
-        isFetching: action.isFetching,
-        total: action.total,
-        hasSearched: action.hasSearched
       };
     default:
       return state;

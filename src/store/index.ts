@@ -1,5 +1,6 @@
-import shoppingCartReducers from "store/ShoppingCart/reducer";
-import VouchersReducers from "store/Vouchers/reducer";
+import cartReducers from "store/Cart/reducer";
+import vouchersReducers from "store/Vouchers/reducer";
+import productsReducers from "store/Products/reducer";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -13,8 +14,9 @@ const middlewares = [
   sagaMiddleware
 ];
 export const rootReducer = combineReducers({
-  shoppingCartReducers,
-  VouchersReducers
+  cartReducers,
+  vouchersReducers,
+  productsReducers
 });
 export type RootState = ReturnType<typeof rootReducer>;
 const store = createStore(

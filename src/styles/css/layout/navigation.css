@@ -20,7 +20,7 @@
 }
 
 .nav__search-container {
-  width: 700px;
+  width: 800px;
   border: 1px solid black;
   background: #ffffff;
   padding: 10px;
@@ -35,5 +35,9 @@
 }
 
 .nav__body-item {
-  margin: 0 50px;
+  margin-left: 50px;
+}
+
+.nav__logo-container {
+  margin-left: 0
 }

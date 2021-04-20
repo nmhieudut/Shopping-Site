@@ -4,13 +4,13 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
 import { Cart } from "components/uncommon";
-import { removeItem, adjustItem } from "store/ShoppingCart";
+import { removeItem, adjustItem } from "store/Cart";
 
 interface ShoppingCartProps {}
 
 function ShoppingCartModal(props: ShoppingCartProps) {
   const dispatch = useDispatch();
-  const addedProducts = useSelector((state: RootState) => state.shoppingCartReducers.addedProducts);
+  const addedProducts = useSelector((state: RootState) => state.cartReducers.addedProducts);
   
   const getTotal = () => {
     let result = addedProducts.reduce(

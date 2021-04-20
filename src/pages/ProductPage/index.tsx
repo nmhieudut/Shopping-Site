@@ -3,11 +3,13 @@ import { List, Pagination } from "antd";
 import { Slider, CardItem } from "components/uncommon";
 import { Title, Spinner } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, fetchProducts } from "store/ShoppingCart";
+import { fetchProducts } from "store/Products";
+import { addItem } from "store/Cart";
 import { fetchVouchers } from "store/Vouchers";
 import { RootState } from "store";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "hooks/useQuery";
+import notfoundLogo from "assets/notfound.png";
 import "styles/css/pages/productpage.css";
 
 export default function ProductPage() {
@@ -17,21 +19,19 @@ export default function ProductPage() {
   const [page, setPage] = useState(query.get("page") || "1");
 
   const products = useSelector(
-    (state: RootState) => state.shoppingCartReducers.products
+    (state: RootState) => state.productsReducers.products
   );
   const isFetching = useSelector(
-    (state: RootState) => state.shoppingCartReducers.isFetching
+    (state: RootState) => state.productsReducers.isFetching
   );
-  const total = useSelector(
-    (state: RootState) => state.shoppingCartReducers.total
-  );
+  const total = useSelector((state: RootState) => state.productsReducers.total);
   const vouchers = useSelector(
-    (state: RootState) => state.VouchersReducers.vouchers
+    (state: RootState) => state.vouchersReducers.vouchers
   );
   const hasSearched = useSelector(
-    (state: RootState) => state.shoppingCartReducers.hasSearched
+    (state: RootState) => state.productsReducers.hasSearched
   );
-  console.log("-------",hasSearched);
+
   const onChangePage = page => {
     setPage(page);
     history.push(`/daily_products?page=${page}`);
@@ -89,6 +89,10 @@ export default function ProductPage() {
               )}
             />
           </>
+        ) : total === 0 ? (
+          <div className="product__notfound-list">
+            <img src={notfoundLogo} alt="no results" width="100%" height="800px" />
+          </div>
         ) : (
           <Spinner />
         )}
