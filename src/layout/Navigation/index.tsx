@@ -6,13 +6,15 @@ import { fetchProducts } from "store/Products";
 import { useDispatch } from "react-redux";
 import "styles/css/layout/navigation.css";
 import logo from "assets/logo.png"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 interface Props {}
 
 export const Navigation = (props: Props) => {
   const dispatch = useDispatch();
+  const history = useHistory()
   const onSearch = query => {
     dispatch(fetchProducts(1, 0, query));
+    history.push(`/daily_products?search=${query}`)
   };
 
   return (

@@ -8,7 +8,7 @@ function* fetchProducts(action: ActionTypes.FetchProductsAction) {
       type: ActionTypes.SET_PRODUCTS,
       products: [],
       isFetching: true,
-      total: 0
+      total: -1
     });
     const data = yield getLists(action.page, action.count, action.q);
     if (data.products.length > 0) {

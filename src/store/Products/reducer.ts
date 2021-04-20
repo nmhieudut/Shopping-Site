@@ -19,7 +19,7 @@ const initialState: ProductState = {
   isFetching: false,
   hasSearched: false,
   products: [],
-  total: 0
+  total: -1
 };
 
 export default function productsReducers(

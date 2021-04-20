@@ -49,7 +49,7 @@ export default function ProductPage() {
     dispatch(fetchProducts(parseInt(page), 12, ""));
     history.push(`/daily_products?page=${page}`);
   }, [page, dispatch, history]);
-
+  
   return (
     <div className="product__page-wrapper">
       <div className="slider__wrapper">
@@ -61,7 +61,7 @@ export default function ProductPage() {
       </div>
 
       <div style={{ margin: "10px 110px" }}>
-        {products && products.length > 0 ? (
+        {products && products.length > 0 && (
           <>
             {hasSearched ? (
               <Title
@@ -71,7 +71,6 @@ export default function ProductPage() {
             ) : (
               <Title message="For you" color="orange" />
             )}
-
             <List
               className="product__item-list"
               loading={isFetching}
@@ -89,13 +88,18 @@ export default function ProductPage() {
               )}
             />
           </>
-        ) : total === 0 ? (
-          <div className="product__notfound-list">
-            <img src={notfoundLogo} alt="no results" width="100%" height="800px" />
-          </div>
-        ) : (
-          <Spinner />
         )}
+        {total === 0 && (
+          <div className="product__notfound-list">
+            <img
+              src={notfoundLogo}
+              alt="no results"
+              width="100%"
+              height="800px"
+            />
+          </div>
+        )}
+        {isFetching && <Spinner />}
         {total > 0 && (
           <div style={{ margin: 20 }}>
             <Pagination
