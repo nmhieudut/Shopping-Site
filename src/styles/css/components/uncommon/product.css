@@ -1,3 +1,19 @@
+.product__item-wrapper {
+  min-width: 16.6666666666666%;
+  padding: 10px;
+  margin: 0;
+}
+
+.product__item-container {
+  background: #fefefe;
+  padding: 10px;
+}
+
+.product__image-container {
+  width: 100%;
+  height: auto;
+}
+
 .rating__wrapper {
   display: flex;
   align-items: center;
@@ -9,7 +25,7 @@
 }
 
 .rating__amount {
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .item__info-wrapper {

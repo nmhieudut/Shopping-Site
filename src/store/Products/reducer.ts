@@ -1,4 +1,5 @@
-import { ProductActionType, SET_PRODUCTS } from "@types";
+import { ProductActionType } from "@types";
+import { SET_PRODUCTS } from "constant/actions";
 export interface Product {
   id: string;
   name: string;

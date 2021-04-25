@@ -1,4 +1,5 @@
-import { ProductActionType, FETCH_PRODUCTS, SET_PRODUCTS } from "@types";
+import { ProductActionType } from "@types";
+import { FETCH_PRODUCTS, SET_PRODUCTS } from "constant/actions";
 import { Product } from "./reducer";
 export function fetchProducts(
   page: number,

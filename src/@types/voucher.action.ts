@@ -1,7 +1,5 @@
 import { Voucher } from "store/Vouchers/reducer";
-
-export const FETCH_VOUCHERS = "FETCH_VOUCHERS";
-export const SET_VOUCHERS = "SET_VOUCHERS";
+import { FETCH_VOUCHERS, SET_VOUCHERS } from "constant/actions";
 
 export interface FetchVouchersAction {
   type: typeof FETCH_VOUCHERS;

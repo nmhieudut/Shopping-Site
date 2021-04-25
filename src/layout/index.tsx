@@ -1,5 +1,6 @@
 import React from "react";
 import ProductsPage from "pages/ProductPage";
+import { CartPage } from "pages";
 import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
 import { Layout } from "antd";
@@ -24,6 +25,8 @@ const ShoppingCartApp: React.FC = () => {
           <Content className="content__container">
             <Redirect from="/" to="/daily_products" />
             <Route path="/daily_products" component={ProductsPage} />
+            <Route path="/carts" component={CartPage} />
+            {/* <Route path="*" component={<div>Not Found</div>} /> */}
           </Content>
         </Switch>
         <Footer />

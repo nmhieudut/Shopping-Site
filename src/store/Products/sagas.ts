@@ -1,19 +1,21 @@
 import { getLists } from "services";
 import * as ActionTypes from "@types";
+import * as ActionConst from "constant/actions";
 import { put, takeLatest } from "redux-saga/effects";
 
 function* fetchProducts(action: ActionTypes.FetchProductsAction) {
   try {
     yield put({
-      type: ActionTypes.SET_PRODUCTS,
+      type: ActionConst.SET_PRODUCTS,
       products: [],
       isFetching: true,
       total: -1
     });
     const data = yield getLists(action.page, action.count, action.q);
+
     if (data.products.length > 0) {
       yield put({
-        type: ActionTypes.SET_PRODUCTS,
+        type: ActionConst.SET_PRODUCTS,
         products: data.products.map(product => ({
           id: product._id,
           name: product.name,
@@ -28,7 +30,7 @@ function* fetchProducts(action: ActionTypes.FetchProductsAction) {
       });
     } else {
       yield put({
-        type: ActionTypes.SET_PRODUCTS,
+        type: ActionConst.SET_PRODUCTS,
         products: [],
         isFetching: false,
         total: 0,
@@ -41,7 +43,7 @@ function* fetchProducts(action: ActionTypes.FetchProductsAction) {
 }
 
 function* watchedSagas() {
-  yield takeLatest(ActionTypes.FETCH_PRODUCTS, fetchProducts);
+  yield takeLatest(ActionConst.FETCH_PRODUCTS, fetchProducts);
 }
 
 export default watchedSagas;

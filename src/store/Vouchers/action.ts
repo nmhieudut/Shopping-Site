@@ -1,9 +1,6 @@
-import {
-  Voucher,
-  FETCH_VOUCHERS,
-  SET_VOUCHERS,
-  VoucherActionType
-} from "@types";
+import { VoucherActionType } from "@types";
+import { FETCH_VOUCHERS, SET_VOUCHERS } from "constant/actions";
+import { Voucher } from "store/Vouchers";
 
 export function fetchVouchers(): VoucherActionType {
   return {

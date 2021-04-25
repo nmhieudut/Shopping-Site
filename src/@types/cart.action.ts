@@ -1,9 +1,5 @@
+import { ADD_ITEM, REMOVE_ITEM, ADJUST_ITEM } from "constant/actions";
 import { AddedProducts } from "store/Cart";
-
-export const ADD_ITEM = "ADD_ITEM";
-export const REMOVE_ITEM = "REMOVE_ITEM";
-export const ADJUST_ITEM = "ADJUST_ITEM";
-
 export interface AddItemAction {
   type: typeof ADD_ITEM;
   product: AddedProducts;

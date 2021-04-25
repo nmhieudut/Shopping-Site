@@ -1,18 +1,19 @@
 import { getAll } from "services";
 import * as ActionTypes from "@types";
+import * as ActionConst from "constant/actions";
 import { put, takeLatest } from "redux-saga/effects";
 
 function* fetchVouchers(action: ActionTypes.FetchVouchersAction) {
   try {
     yield put({
-      type: ActionTypes.SET_VOUCHERS,
+      type: ActionConst.SET_VOUCHERS,
       vouchers: []
     });
     const data = yield getAll();
 
     if (data.vouchers.length > 0) {
       yield put({
-        type: ActionTypes.SET_VOUCHERS,
+        type: ActionConst.SET_VOUCHERS,
         vouchers: data.vouchers.map(voucher => ({
           id: voucher._id,
           url: voucher.url,
@@ -21,7 +22,7 @@ function* fetchVouchers(action: ActionTypes.FetchVouchersAction) {
       });
     } else {
       yield put({
-        type: ActionTypes.SET_VOUCHERS,
+        type: ActionConst.SET_VOUCHERS,
         vouchers: []
       });
     }
@@ -31,7 +32,7 @@ function* fetchVouchers(action: ActionTypes.FetchVouchersAction) {
 }
 
 function* watchedSagas() {
-  yield takeLatest(ActionTypes.FETCH_VOUCHERS, fetchVouchers);
+  yield takeLatest(ActionConst.FETCH_VOUCHERS, fetchVouchers);
 }
 
 export default watchedSagas;

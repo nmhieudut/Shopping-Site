@@ -1,10 +1,6 @@
-import {
-  ADD_ITEM,
-  REMOVE_ITEM,
-  ADJUST_ITEM,
-  ShoppingCartActionType
-} from "@types";
+import { ShoppingCartActionType } from "@types";
 import { AddedProducts } from "store/Cart";
+import { ADD_ITEM, REMOVE_ITEM, ADJUST_ITEM } from "constant/actions";
 
 export function addItem(product: AddedProducts): ShoppingCartActionType {
   return {

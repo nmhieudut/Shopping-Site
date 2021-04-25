@@ -49,7 +49,7 @@ export default function ProductPage() {
     dispatch(fetchProducts(parseInt(page), 12, ""));
     history.push(`/daily_products?page=${page}`);
   }, [page, dispatch, history]);
-  
+
   return (
     <div className="product__page-wrapper">
       <div className="slider__wrapper">
@@ -71,22 +71,11 @@ export default function ProductPage() {
             ) : (
               <Title message="For you" color="orange" />
             )}
-            <List
-              className="product__item-list"
-              loading={isFetching}
-              grid={{
-                gutter: 12,
-                sm: 1,
-                md: 2,
-                lg: 4,
-                xl: 4,
-                xxl: 6
-              }}
-              dataSource={products}
-              renderItem={item => (
-                <CardItem item={item} onChoose={onAddToCart} message="Add" />
-              )}
-            />
+            <div className="product__list row" style={{ margin: "10px 0" }}>
+              {products.map(product => (
+                <CardItem item={product} onChoose={onAddToCart} message="Add" />
+              ))}
+            </div>
           </>
         )}
         {total === 0 && (

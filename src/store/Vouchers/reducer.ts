@@ -1,5 +1,5 @@
-import { SET_VOUCHERS, VoucherActionType } from "@types";
-
+import { VoucherActionType } from "@types";
+import { SET_VOUCHERS } from "constant/actions";
 export interface Voucher {
   id: string;
   url: string;

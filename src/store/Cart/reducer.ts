@@ -1,10 +1,5 @@
-import {
-  ShoppingCartActionType,
-  ADD_ITEM,
-  REMOVE_ITEM,
-  ADJUST_ITEM
-} from "@types";
-
+import { ShoppingCartActionType } from "@types";
+import { ADD_ITEM, REMOVE_ITEM, ADJUST_ITEM } from "constant/actions";
 export interface AddedProducts {
   id: string;
   name: string;

@@ -1,6 +1,5 @@
 import { Product } from "store/Products";
-export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
-export const SET_PRODUCTS = "SET_PRODUCTS";
+import { FETCH_PRODUCTS, SET_PRODUCTS } from "constant/actions";
 
 export interface FetchProductsAction {
   type: typeof FETCH_PRODUCTS;
