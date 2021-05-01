@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Button, Rate } from "antd";
+import { Button, Rate } from "antd";
 import { Product } from "store/Products";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import "styles/css/components/uncommon/product.css";

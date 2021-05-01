@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List, Pagination } from "antd";
+import { Pagination } from "antd";
 import { Slider, CardItem } from "components/uncommon";
 import { Title, Spinner } from "components/common";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,7 +49,7 @@ export default function ProductPage() {
     dispatch(fetchProducts(parseInt(page), 12, ""));
     history.push(`/daily_products?page=${page}`);
   }, [page, dispatch, history]);
-
+  
   return (
     <div className="product__page-wrapper">
       <div className="slider__wrapper">
@@ -59,13 +59,12 @@ export default function ProductPage() {
           <Spinner />
         )}
       </div>
-
       <div style={{ margin: "10px 110px" }}>
         {products && products.length > 0 && (
           <>
             {hasSearched ? (
               <Title
-                message={`${products.length} results for ${query}`}
+                message={`${products.length} results for "${query.get("search")}"`}
                 color="orange"
               />
             ) : (
